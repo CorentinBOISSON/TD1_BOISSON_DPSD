@@ -9,6 +9,10 @@ public class Inventory {
         this.items = items;
     }
 
+    public Item[] getItems() {
+        return items;
+    }
+
     public Inventory() {
         super();
         items = new Item[]{
@@ -37,10 +41,23 @@ public class Inventory {
                     && items[i].getName() != "Backstage passes to a TAFKAL80ETC concert") {
                 if (items[i].getQuality() > 0) {
                     if (items[i].getName() != "Sulfuras, Hand of Ragnaros") {
-                        items[i].setQuality(items[i].getQuality() - 1);
+
+
+// We add "Conjured" objects, wich decrease twice faster than other objetcs.
+                        if (items[i].getName() == "Conjured Mana Cake") {
+
+                            items[i].setQuality(items[i].getQuality() - 2);
+
+                        }
+
+                        else {
+                            items[i].setQuality(items[i].getQuality() - 1);
+
+                        }
                     }
                 }
-            } else {
+            }
+            else {
                 if (items[i].getQuality() < 50) {
                     items[i].setQuality(items[i].getQuality() + 1);
 
