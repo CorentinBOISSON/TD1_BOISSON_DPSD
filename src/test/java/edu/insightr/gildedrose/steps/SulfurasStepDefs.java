@@ -10,24 +10,24 @@ import edu.insightr.gildedrose.Item;
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
 
-public class AgedBrieStepDefs {
+public class SulfurasStepDefs {
     private Inventory inventory;
     private Item[] items;
-    private Item agedbried;
+    private Item sulfuras;
 
-    @Given("^I have a new inventory Aged Brie$")
+    @Given("^I have a new inventory sulfuras$")
     public void iHaveANewInventory() throws Throwable {
         inventory = new Inventory();
         items = inventory.getItems();
-        agedbried = items[1];
+        sulfuras = items[3];
     }
 
-    @Then("^the quality of the agedBrie item is (\\d+)$")
-    public void theQualityOfTheAgedBriedIs(int agedbriedQuality) throws Throwable {
-        assertThat(agedbried.getQuality(), is(agedbriedQuality));
+    @Then("^the quality of the sulfuras item is (\\d+)$")
+    public void theQualityOfTheSulfurasIs(int sulfurasQuality) throws Throwable {
+        assertThat(sulfuras.getQuality(), is(sulfurasQuality));
     }
 
-    @When("^I update the inventory Aged Brie$")
+    @When("^I update the inventory sulfuras$")
     public void iUpdateTheInventory() throws Throwable {
         inventory.updateQuality();
     }
