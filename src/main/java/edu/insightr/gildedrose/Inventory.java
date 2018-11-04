@@ -1,5 +1,6 @@
 package edu.insightr.gildedrose;
 
+
 public class Inventory {
 
     private Item[] items;
@@ -100,6 +101,18 @@ public class Inventory {
             }
         }
     }
+
+
+   /*
+    Visitor myVisitor = new Visitor();
+    public void superUpdate(){
+        for(Item item : items){
+            item.accept(myVisitor);
+        }
+    }
+
+*/
+
 
     public static void main(String[] args) {
         Inventory inventory = new Inventory();
